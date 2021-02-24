@@ -141,6 +141,8 @@ Error message and password prompt
 
 <p>This <a class="tc-tiddlylink-external" href="https://tiddlywiki.com" rel="noopener noreferrer" target="_blank">TiddlyWiki</a> contains the following tiddlers:</p><p><ul>
 
+<li>$:/config/DefaultSidebarTab</li>
+
 <li>$:/config/TiddlerInfo/Mode</li>
 
 <li>$:/config/Whitespace/sidebar</li>
@@ -152,6 +154,8 @@ Error message and password prompt
 <li>$:/core/ui/SideBar/More</li>
 
 <li>$:/core/ui/SideBar/Open</li>
+
+<li>$:/core/ui/SideBar/Tools</li>
 
 <li>$:/DefaultTiddlers</li>
 
@@ -235,6 +239,9 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
+<div created="20210224130156672" modified="20210224130156672" title="$:/config/DefaultSidebarTab">
+<pre>$:/core/ui/SideBar/Recent</pre>
+</div>
 <div created="20210224125410789" modified="20210224125412453" title="$:/config/TiddlerInfo/Mode">
 <pre>popup</pre>
 </div>
@@ -10150,6 +10157,37 @@ $button$
 &lt;/div&gt;
 </pre>
 </div>
+<div caption="{{$:/language/SideBar/Tools/Caption}}" modified="20210224130207543" title="$:/core/ui/SideBar/Tools">
+<pre>\define lingo-base() $:/language/ControlPanel/
+\define config-title()
+$:/config/PageControlButtons/Visibility/$(listItem)$
+\end
+
+&lt;&lt;lingo Basics/Version/Prompt&gt;&gt; &lt;&lt;version&gt;&gt;
+
+&lt;$set name=&quot;tv-config-toolbar-icons&quot; value=&quot;yes&quot;&gt;
+
+&lt;$set name=&quot;tv-config-toolbar-text&quot; value=&quot;yes&quot;&gt;
+
+&lt;$set name=&quot;tv-config-toolbar-class&quot; value=&quot;&quot;&gt;
+
+&lt;$list filter=&quot;[all[shadows+tiddlers]tag[$:/tags/PageControls]!has[draft.of]]&quot; variable=&quot;listItem&quot;&gt;
+
+&lt;div style=&quot;position:relative;&quot; class={{{ [&lt;listItem&gt;encodeuricomponent[]addprefix[tc-btn-]] }}}&gt;
+
+&lt;$checkbox tiddler=&lt;&lt;config-title&gt;&gt; field=&quot;text&quot; checked=&quot;show&quot; unchecked=&quot;hide&quot; default=&quot;show&quot;/&gt; &lt;$transclude tiddler=&lt;&lt;listItem&gt;&gt;/&gt; &lt;i class=&quot;tc-muted&quot;&gt;&lt;$transclude tiddler=&lt;&lt;listItem&gt;&gt; field=&quot;description&quot;/&gt;&lt;/i&gt;
+
+&lt;/div&gt;
+
+&lt;/$list&gt;
+
+&lt;/$set&gt;
+
+&lt;/$set&gt;
+
+&lt;/$set&gt;
+</pre>
+</div>
 <div created="20210224113257000" modified="20210224125933630" title="$:/DefaultTiddlers">
 <pre>[[Main Menu]]
 </pre>
@@ -10567,8 +10605,8 @@ $button$
 <div created="20210224113654694" modified="20210224113704838" title="$:/state/tab-1163638994">
 <pre>$:/core/ui/MoreSideBar/Plugins/Theme</pre>
 </div>
-<div created="20210224113330982" modified="20210224125915662" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Info</pre>
+<div created="20210224113330982" modified="20210224130149761" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Settings</pre>
 </div>
 <div created="20210224113810148" modified="20210224113810148" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
@@ -10585,7 +10623,7 @@ $button$
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="[[Main Menu]]" title="$:/StoryList">
+<div created="20210224130127588" list="[[Main Menu]]" modified="20210224130138425" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210224113526881" modified="20210224113530383" title="$:/theme">
