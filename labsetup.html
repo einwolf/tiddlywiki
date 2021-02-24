@@ -151,7 +151,7 @@ Error message and password prompt
 
 <li>$:/core/ui/SideBar/More</li>
 
-<li>$:/core/ui/SideBar/Tools</li>
+<li>$:/core/ui/SideBar/Open</li>
 
 <li>$:/DefaultTiddlers</li>
 
@@ -10114,38 +10114,43 @@ Error message and password prompt
 &lt;/div&gt;
 </pre>
 </div>
-<div caption="{{$:/language/SideBar/Tools/Caption}}" modified="20210224125837131" title="$:/core/ui/SideBar/Tools">
-<pre>\define lingo-base() $:/language/ControlPanel/
-\define config-title()
-$:/config/PageControlButtons/Visibility/$(listItem)$
+<div caption="{{$:/language/SideBar/Open/Caption}}" modified="20210224125938187" title="$:/core/ui/SideBar/Open">
+<pre>\whitespace trim
+\define lingo-base() $:/language/CloseAll/
+
+\define drop-actions()
+&lt;$action-listops $tiddler=&lt;&lt;tv-story-list&gt;&gt; $subfilter=&quot;+[insertbefore:currentTiddler&lt;actionTiddler&gt;]&quot;/&gt;
 \end
 
-&lt;&lt;lingo Basics/Version/Prompt&gt;&gt; &lt;&lt;version&gt;&gt;
+\define placeholder()
+&lt;div class=&quot;tc-droppable-placeholder&quot;/&gt;
+\end
 
-&lt;$set name=&quot;tv-config-toolbar-icons&quot; value=&quot;yes&quot;&gt;
-
-&lt;$set name=&quot;tv-config-toolbar-text&quot; value=&quot;yes&quot;&gt;
-
-&lt;$set name=&quot;tv-config-toolbar-class&quot; value=&quot;&quot;&gt;
-
-&lt;$list filter=&quot;[all[shadows+tiddlers]tag[$:/tags/PageControls]!has[draft.of]]&quot; variable=&quot;listItem&quot;&gt;
-
-&lt;div style=&quot;position:relative;&quot; class={{{ [&lt;listItem&gt;encodeuricomponent[]addprefix[tc-btn-]] }}}&gt;
-
-&lt;$checkbox tiddler=&lt;&lt;config-title&gt;&gt; field=&quot;text&quot; checked=&quot;show&quot; unchecked=&quot;hide&quot; default=&quot;show&quot;/&gt; &lt;$transclude tiddler=&lt;&lt;listItem&gt;&gt;/&gt; &lt;i class=&quot;tc-muted&quot;&gt;&lt;$transclude tiddler=&lt;&lt;listItem&gt;&gt; field=&quot;description&quot;/&gt;&lt;/i&gt;
-
+\define droppable-item(button)
+\whitespace trim
+&lt;$droppable actions=&lt;&lt;drop-actions&gt;&gt; enable=&lt;&lt;tv-allow-drag-and-drop&gt;&gt;&gt;
+&lt;&lt;placeholder&gt;&gt;
+&lt;div&gt;
+$button$
 &lt;/div&gt;
+&lt;/$droppable&gt;
+\end
 
+&lt;div class=&quot;tc-sidebar-tab-open&quot;&gt;
+&lt;$list filter=&quot;[list&lt;tv-story-list&gt;]&quot; history=&lt;&lt;tv-history-list&gt;&gt; storyview=&quot;pop&quot;&gt;
+&lt;div class=&quot;tc-sidebar-tab-open-item&quot;&gt;
+&lt;$macrocall $name=&quot;droppable-item&quot; button=&quot;&quot;&quot;&lt;$button message=&quot;tm-close-tiddler&quot; tooltip={{$:/language/Buttons/Close/Hint}} aria-label={{$:/language/Buttons/Close/Caption}} class=&quot;tc-btn-invisible tc-btn-mini tc-small-gap-right&quot;&gt;{{$:/core/images/close-button}}&lt;/$button&gt;&lt;$link to={{!!title}}&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;&quot;&quot;&quot;/&gt;
+&lt;/div&gt;
 &lt;/$list&gt;
-
-&lt;/$set&gt;
-
-&lt;/$set&gt;
-
-&lt;/$set&gt;
+&lt;$tiddler tiddler=&quot;&quot;&gt;
+&lt;div&gt;
+&lt;$macrocall $name=&quot;droppable-item&quot; button=&quot;&quot;&quot;&lt;$button message=&quot;tm-close-all-tiddlers&quot; class=&quot;tc-btn-invisible tc-btn-mini&quot;&gt;&lt;&lt;lingo Button&gt;&gt;&lt;/$button&gt;&quot;&quot;&quot;/&gt;
+&lt;/div&gt;
+&lt;/$tiddler&gt;
+&lt;/div&gt;
 </pre>
 </div>
-<div created="20210224113257000" modified="20210224125726224" title="$:/DefaultTiddlers">
+<div created="20210224113257000" modified="20210224125933630" title="$:/DefaultTiddlers">
 <pre>[[Main Menu]]
 </pre>
 </div>
@@ -10544,8 +10549,8 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <div created="20210221174753493" modified="20210221174759870" title="$:/SiteTitle">
 <pre>Ioncollector Lab Setup</pre>
 </div>
-<div created="20210221174822961" modified="20210224125821027" title="$:/state/showeditpreview">
-<pre>yes</pre>
+<div created="20210221174822961" modified="20210221174825974" title="$:/state/showeditpreview">
+<pre>no</pre>
 </div>
 <div created="20210224125707907" modified="20210224125709859" title="$:/state/sidebar">
 <pre>yes</pre>
@@ -10562,7 +10567,7 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <div created="20210224113654694" modified="20210224113704838" title="$:/state/tab-1163638994">
 <pre>$:/core/ui/MoreSideBar/Plugins/Theme</pre>
 </div>
-<div created="20210224113330982" modified="20210224125556684" title="$:/state/tab-1749438307">
+<div created="20210224113330982" modified="20210224125915662" title="$:/state/tab-1749438307">
 <pre>$:/core/ui/ControlPanel/Info</pre>
 </div>
 <div created="20210224113810148" modified="20210224113810148" title="$:/state/tab-2065006209">
@@ -10580,7 +10585,7 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210224125824643" list="[[Main Menu]]" modified="20210224125824643" title="$:/StoryList">
+<div list="[[Main Menu]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210224113526881" modified="20210224113530383" title="$:/theme">
@@ -10974,11 +10979,8 @@ pxe-service=tag:ipxe,X86-64_EFI, &quot;Boot iPXE UEFI 64 demo&quot;,http://boot.
 pxe-service=tag:ipxe,BC_EFI, &quot;Boot iPXE UEFI 32 demo&quot;,http://boot.ipxe.org/demo/boot.php
 ```</pre>
 </div>
-<div created="20210224113300486" modified="20210224125832085" tags="" title="Main Menu">
-<pre>!!! PXE
-* [[PXE Setup]]
-* [[Example dnsmasq with iPXE]]
-</pre>
+<div created="20210224113300486" modified="20210224113317325" tags="" title="Main Menu">
+<pre>Menu goes here</pre>
 </div>
 <div created="20210221144900435" modified="20210221175520068" tags="" title="PXE Setup">
 <pre>! Fedora 33
