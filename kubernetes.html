@@ -235,6 +235,8 @@ Error message and password prompt
 
 <li>Main Menu</li>
 
+<li>OpenShift Debug</li>
+
 <li>OpenShift Internal Repo</li>
 
 <li>Operator SDK</li>
@@ -10608,7 +10610,7 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210224185633769" list="[[Main Menu]]" modified="20210224185633769" title="$:/StoryList">
+<div created="20210224185633769" list="[[Main Menu]] [[OpenShift Debug]]" modified="20210224192818727" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180329154930300" creator="jd" modified="20210119180224274" modifier="jd" title="$:/theme">
@@ -11053,6 +11055,25 @@ Programming
 * [[Red Hat Programming]]
 * [[Operator SDK]]
 * [[Go]]
+</pre>
+</div>
+<div created="20210224192825077" modified="20210224193002451" title="OpenShift Debug">
+<pre>!!! OpenShift Pod Debugging
+
+Debug pod requires an image pull and is not working for some reason.
+
+```
+# Debug pod
+oc get nodes
+oc debug nodes/node-name
+```
+
+!!! ssh to CodeReady containers node
+
+```
+crc ip
+ssh -i ~/.crc/cache/crc_libvirt_4.6.15/id_ecdsa_crc core@192.168.130.11
+```
 </pre>
 </div>
 <div created="20210224184435140" modified="20210224185315840" title="OpenShift Internal Repo">
