@@ -235,6 +235,8 @@ Error message and password prompt
 
 <li>Main Menu</li>
 
+<li>OpenShift Internal Repo</li>
+
 <li>Operator SDK</li>
 
 <li>Red Hat Container Repos</li>
@@ -10582,8 +10584,8 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <div created="20190805132921383" modified="20210119180520400" title="$:/SiteTitle">
 <pre>Kubernetes</pre>
 </div>
-<div created="20210119183632914" modified="20210121162042034" title="$:/state/showeditpreview">
-<pre>yes</pre>
+<div created="20210119183632914" modified="20210224185057233" title="$:/state/showeditpreview">
+<pre>no</pre>
 </div>
 <div created="20210119174928740" modified="20210119175016987" title="$:/state/sidebar">
 <pre>yes</pre>
@@ -10606,7 +10608,7 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210224184354664" list="[[Main Menu]]" modified="20210224184359406" title="$:/StoryList">
+<div created="20210224184354664" list="[[Main Menu]] [[OpenShift Internal Repo]]" modified="20210224184428966" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180329154930300" creator="jd" modified="20210119180224274" modifier="jd" title="$:/theme">
@@ -11050,6 +11052,32 @@ Programming
 * [[Red Hat Programming]]
 * [[Operator SDK]]
 * [[Go]]
+</pre>
+</div>
+<div created="20210224184435140" modified="20210224185315840" title="OpenShift Internal Repo">
+<pre>OpenShift has an internal container repo for each project.
+
+See https://docs.openshift.com/container-platform/4.6/registry/accessing-the-registry.html
+
+!! Codeready Containers
+
+```
+# Get the host name for internal repo
+oc get route default-route -n openshift-image-registry --template='{{ .spec.host }}'
+
+# Get certificate for internal repo
+oc extract secret/router-ca --keys=tls.crt -n openshift-ingress-operator
+
+# Put certificate in certs.d for podman to recognize it. Also looks in /etc/docker/certs.d
+cp tls.crt /etc/containers/certs.d
+
+# Login using token auth. Password does not work.
+podman login -u kubeadmin -p $(oc whoami -t) default-route-openshift-image-registry.apps-crc.testing
+
+# Tag image using project name
+podman tag centos:7 default-route-openshift-image-registry.apps-crc.testing/project1/centos:7
+podman image push centos:7 default-route-openshift-image-registry.apps-crc.testing/project1/centos:7
+```
 </pre>
 </div>
 <div created="20210119192547203" modified="20210119192617490" title="Operator SDK">
