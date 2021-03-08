@@ -223,6 +223,8 @@ Error message and password prompt
 
 <li>$:/themes/tiddlywiki/vanilla/options/sidebarlayout</li>
 
+<li>Approving kubernetes certificates</li>
+
 <li>Eclipse 2020-03</li>
 
 <li>Github</li>
@@ -10612,7 +10614,7 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210308194712293" list="[[Main Menu]] Github" modified="20210308194712293" title="$:/StoryList">
+<div created="20210308194712293" list="[[Approving kubernetes certificates]] [[Main Menu]] Github" modified="20210308194712293" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180329154930300" creator="jd" modified="20210119180224274" modifier="jd" title="$:/theme">
@@ -10980,6 +10982,17 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 </div>
 <div created="20210119174820925" modified="20210119174823067" title="$:/themes/tiddlywiki/vanilla/options/sidebarlayout">
 <pre>fixed-fluid</pre>
+</div>
+<div created="20210308195603337" modified="20210308195701513" tags="" title="Approving kubernetes certificates">
+<pre>!! Approve certificates
+
+```bash
+export KUBECONFIG=~/ocp4c1/auth/kubeconfig
+oc get csr
+# May need to do this more than once to get all pending certificates
+oc get csr -o go-template='{{range .items}}{{if not .status}}{{.metadata.name}}{{&quot;\n&quot;}}{{end}}{{end}}' | xargs oc adm certificate approve
+# Worker nodes start to go green
+```</pre>
 </div>
 <div created="20200325122829846" modified="20200325125127516" title="Eclipse 2020-03">
 <pre>Eclipse has a plugin module that will mirror Eclipse software repositories. So, you like need Eclipse installed to mirror anything.
