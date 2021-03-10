@@ -181,6 +181,8 @@ Error message and password prompt
 
 <li>$:/SiteTitle</li>
 
+<li>$:/state/showeditpreview</li>
+
 <li>$:/state/sidebar</li>
 
 <li>$:/state/tab--1963855381</li>
@@ -10559,6 +10561,9 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <div created="20190805132921383" modified="20200227150211110" title="$:/SiteTitle">
 <pre>Software Setup Information</pre>
 </div>
+<div created="20210310181127576" modified="20210310181133716" title="$:/state/showeditpreview">
+<pre>no</pre>
+</div>
 <div created="20210119175514835" modified="20210224154821360" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
@@ -11047,8 +11052,19 @@ Not using this currently.
 {}
 ```</pre>
 </div>
-<div created="20210310154358646" modified="20210310155301815" title="Code Sight">
+<div created="20210310154358646" modified="20210310181151132" title="Code Sight">
 <pre>!! Code Sight on Eclipse
+
+!! Setup downloads on Coverity Connect server
+
+Put the analysis license and correct version of cov-analysis installer on coverity connect server in `cov-platform/server/base/webapps/downloads`.
+
+* license.dat
+* cov-analysis-win64-2020.12.exe
+* cov-analysis-linux64-2020.12.sh
+* cov-analysis-macosx-2020.12.sh
+
+!! Eclipse client configuration
 
 coverity.conf working location
 
