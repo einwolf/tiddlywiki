@@ -217,6 +217,8 @@ Error message and password prompt
 
 <li>Ansible Tower LDAP</li>
 
+<li>Code Sight</li>
+
 <li>Coverity Desktop Analysis Trial Run 1</li>
 
 <li>Coverity Desktop Analysis Trial Run 2</li>
@@ -10575,7 +10577,7 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210310154302657" list="[[Main Menu]]" modified="20210310154302657" title="$:/StoryList">
+<div created="20210310154302657" list="[[Main Menu]] [[Code Sight]]" modified="20210310154352528" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210119175512184" list="$:/core/ui/SideBar/Open $:/core/ui/SideBar/Recent $:/core/ui/SideBar/Tools $:/core/ui/SideBar/More" modified="20210119175512184" title="$:/tags/SideBar">
@@ -11043,6 +11045,33 @@ Not using this currently.
 
 ```
 {}
+```</pre>
+</div>
+<div created="20210310154358646" modified="20210310155301815" title="Code Sight">
+<pre>!! Code Sight on Eclipse
+
+coverity.conf working location
+
+* No: ~/.coverity/coverity.conf
+* No: ~/.synopsys/desktop/controller/installedtools/coverity-analysis/coverity.conf
+* Yes: Root of eclipse workspace as coverity.conf
+
+!! Example
+
+```
+{
+    &quot;type&quot;: &quot;Coverity configuration&quot;,
+    &quot;format_version&quot;: 1,
+    &quot;format_minor_version&quot;: 4,
+    &quot;settings&quot;: {
+        &quot;server&quot;: {
+            &quot;host&quot;: &quot;host-name&quot;,
+            &quot;port&quot;: 8443,
+            &quot;ssl&quot;: true,
+            &quot;on_new_cert&quot;: &quot;trust&quot;,
+        },
+    },
+}
 ```</pre>
 </div>
 <div created="20200227140910230" modified="20200227193702933" title="Coverity Desktop Analysis Trial Run 1">
