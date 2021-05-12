@@ -10811,7 +10811,7 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210512110136520" list="[[Main Menu]] [[Northrop Specific]]" modified="20210512110156570" title="$:/StoryList">
+<div created="20210512110136520" list="[[Main Menu]] [[Northrop Specific]]" modified="20210512110341971" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180826061648522" creator="jd" modified="20180826061648522" modifier="jd" title="$:/theme">
@@ -11366,7 +11366,7 @@ It's ~/.m2/settings.xml here.
     &lt;/settings&gt;
 ```</pre>
 </div>
-<div created="20190805140026077" modified="20210512110323784" tags="" title="Northrop Specific">
+<div created="20190805140026077" modified="20210512111005322" tags="" title="Northrop Specific">
 <pre>! NGGN
 
 Authenticated Windows proxy does HTTP, HTTPS, and FTP.
@@ -11386,6 +11386,12 @@ centralproxy.northgrum.com:80
 ```
 *.ngc.com,*.myngc.com,*.northgrum.com,*.northrop.com,*.grumman.com,*.logicon.com,*.trw.com,*.nns.com
 ```
+
+!! Proxy Certificates
+
+The proxy resigns TLS encryption certificates. To use with, say, Fedora save the NG root ca and NG proxy certificates as pem.
+
+For Fedora, put the certificates in /etc/pki/ca-trust/source/anchors and run update-ca-trust. Use one cert per file. I tried the concatenated chain format and it didn't work.
 
 ! Low Trust
 
