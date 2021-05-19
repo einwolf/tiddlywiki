@@ -141,17 +141,17 @@ Error message and password prompt
 
 <p>This <a class="tc-tiddlylink-external" href="https://tiddlywiki.com" rel="noopener noreferrer" target="_blank">TiddlyWiki</a> contains the following tiddlers:</p><p><ul>
 
-<li>$:/config/Manager/Filter</li>
+<li>$:/config/Manager/RecentTags</li>
+
+<li>$:/config/Manager/Show</li>
 
 <li>$:/config/Manager/System</li>
+
+<li>$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home</li>
 
 <li>$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/more-page-actions</li>
 
 <li>$:/config/RelinkOnRename</li>
-
-<li>$:/config/SideBar/Visibility/$:/core/ui/SideBar/Open</li>
-
-<li>$:/config/SideBar/Visibility/$:/core/ui/SideBar/Recent</li>
 
 <li>$:/config/Whitespace/scrollbar-style</li>
 
@@ -277,23 +277,23 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
-<div created="20210519212817552" modified="20210519212824852" title="$:/config/Manager/Filter">
-<pre>sidebar</pre>
-</div>
-<div created="20210519212813899" modified="20210519212813899" title="$:/config/Manager/System">
+<div created="20210519213805431" list="$:/tags/SideBar" modified="20210519213805431" title="$:/config/Manager/RecentTags">
 <pre></pre>
 </div>
-<div created="20210519212737398" modified="20210519212737398" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/more-page-actions">
+<div created="20210519213650285" modified="20210519213746881" title="$:/config/Manager/Show">
+<pre>tiddlers</pre>
+</div>
+<div created="20210519213001705" modified="20210519213001705" title="$:/config/Manager/System">
+<pre></pre>
+</div>
+<div created="20210519213854443" modified="20210519213854443" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home">
+<pre>show</pre>
+</div>
+<div created="20210519212953670" modified="20210519212953670" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/more-page-actions">
 <pre>show</pre>
 </div>
 <div created="20200317143122795" modified="20200317143122795" title="$:/config/RelinkOnRename">
 <pre>yes</pre>
-</div>
-<div created="20210519212442246" modified="20210519212442996" title="$:/config/SideBar/Visibility/$:/core/ui/SideBar/Open">
-<pre>show</pre>
-</div>
-<div created="20210519212904301" modified="20210519212920231" tags="" title="$:/config/SideBar/Visibility/$:/core/ui/SideBar/Recent">
-<pre>show</pre>
 </div>
 <div created="20210119175032557" modified="20210119175033238" title="$:/config/Whitespace/scrollbar-style">
 <pre>visible</pre>
@@ -10174,7 +10174,7 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div caption="{{$:/language/SideBar/More/Caption}}" modified="20210119174919996" title="$:/core/ui/SideBar/More">
+<div caption="{{$:/language/SideBar/More/Caption}}" created="20210519213805430" modified="20210519213805430" tags="$:/tags/SideBar" title="$:/core/ui/SideBar/More">
 <pre>&lt;div class=&quot;tc-more-sidebar&quot;&gt;
 &lt;$macrocall $name=&quot;tabs&quot; tabsList=&quot;[all[shadows+tiddlers]tag[$:/tags/MoreSideBar]!has[draft.of]]&quot; default={{$:/config/DefaultMoreSidebarTab}} state=&quot;$:/state/tab/moresidebar&quot; class=&quot;tc-vertical tc-sidebar-tabs-more&quot; explicitState=&quot;$:/state/tab/moresidebar-1850697562&quot;/&gt;
 &lt;/div&gt;
@@ -10623,28 +10623,28 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <div created="20210119174928740" modified="20210119175016987" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
-<div created="20210119174807789" modified="20210519212723029" title="$:/state/tab--1963855381">
+<div created="20210119174807789" modified="20210519212944965" title="$:/state/tab--1963855381">
 <pre>$:/core/ui/ControlPanel/Toolbars</pre>
 </div>
-<div created="20210119174733509" modified="20210519212716392" title="$:/state/tab-1749438307">
+<div created="20210119174733509" modified="20210519212938937" title="$:/state/tab-1749438307">
 <pre>$:/core/ui/ControlPanel/Appearance</pre>
 </div>
 <div created="20210224113052498" modified="20210519181303382" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
 </div>
-<div created="20210119174720917" modified="20210119174720917" title="$:/state/tab/moresidebar-1850697562">
-<pre>$:/core/ui/MoreSideBar/System</pre>
+<div created="20210119174720917" modified="20210519213858504" title="$:/state/tab/moresidebar-1850697562">
+<pre>$:/core/ui/MoreSideBar/Recent</pre>
 </div>
 <div created="20210119174717797" modified="20210119174719461" title="$:/state/tab/sidebar-1845994331">
 <pre>$:/core/ui/SideBar/More</pre>
 </div>
-<div created="20210519212733695" modified="20210519212752451" title="$:/state/tabs/controlpanel/toolbars-1345989671">
-<pre>$:/core/ui/ControlPanel/Toolbars/EditToolbar</pre>
+<div created="20210519212947510" modified="20210519212951161" title="$:/state/tabs/controlpanel/toolbars-1345989671">
+<pre>$:/core/ui/ControlPanel/Toolbars/PageControls</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210519205417349" list="$:/config/SideBar/Visibility/$:/core/ui/SideBar/Recent $:/Manager $:/ControlPanel [[Main Menu]]" modified="20210519212803986" title="$:/StoryList">
+<div created="20210519212933719" list="$:/ControlPanel [[Main Menu]]" modified="20210519213850518" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180329154930300" creator="jd" modified="20210119180224274" modifier="jd" title="$:/theme">
