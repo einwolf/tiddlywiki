@@ -145,33 +145,17 @@ Error message and password prompt
 
 <li>$:/config/DefaultSidebarTab</li>
 
-<li>$:/config/EditToolbarButtons/Visibility/$:/core/ui/Buttons/cancel</li>
-
-<li>$:/config/EditToolbarButtons/Visibility/$:/core/ui/Buttons/delete</li>
-
 <li>$:/config/Manager/Filter</li>
 
 <li>$:/config/Manager/RecentTags</li>
-
-<li>$:/config/Manager/Show</li>
 
 <li>$:/config/Manager/System</li>
 
 <li>$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home</li>
 
-<li>$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/manager</li>
-
 <li>$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/more-page-actions</li>
 
-<li>$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/tag-manager</li>
-
 <li>$:/config/TiddlerInfo/Mode</li>
-
-<li>$:/config/Toolbar/Icons</li>
-
-<li>$:/config/Toolbar/Text</li>
-
-<li>$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/info</li>
 
 <li>$:/config/Whitespace/sidebar</li>
 
@@ -241,8 +225,6 @@ Error message and password prompt
 
 <li>$:/themes/jd/Material</li>
 
-<li>$:/themes/jd/Material/ConfigDB</li>
-
 <li>$:/themes/jd/Whitespace</li>
 
 <li>$:/themes/nome/github</li>
@@ -273,53 +255,29 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
-<div created="20210519205922817" modified="20210519212308457" title="$:/config/DefaultMoreSidebarTab">
-<pre>$:/core/ui/MoreSideBar/Tags</pre>
+<div created="20210519205922817" modified="20210519211915319" title="$:/config/DefaultMoreSidebarTab">
+<pre>$:/core/ui/MoreSideBar/All</pre>
 </div>
-<div created="20210224153642865" modified="20210224153642865" title="$:/config/DefaultSidebarTab">
-<pre>$:/core/ui/SideBar/Recent</pre>
+<div created="20210224153642865" modified="20210519214227798" title="$:/config/DefaultSidebarTab">
+<pre>$:/core/ui/SideBar/More</pre>
 </div>
-<div created="20210519212207790" modified="20210519212208157" title="$:/config/EditToolbarButtons/Visibility/$:/core/ui/Buttons/cancel">
-<pre>show</pre>
+<div created="20210519214040032" modified="20210519214133410" title="$:/config/Manager/Filter">
+<pre>more</pre>
 </div>
-<div created="20210519212206141" modified="20210519212206658" title="$:/config/EditToolbarButtons/Visibility/$:/core/ui/Buttons/delete">
-<pre>show</pre>
-</div>
-<div created="20210519213817515" modified="20210519213910856" title="$:/config/Manager/Filter">
-<pre>open</pre>
-</div>
-<div created="20210519213836937" list="$:/tags/SideBar" modified="20210519213915216" title="$:/config/Manager/RecentTags">
+<div created="20210519214127894" list="$:/tags/SideBar" modified="20210519214136815" title="$:/config/Manager/RecentTags">
 <pre></pre>
 </div>
-<div created="20210519213622287" modified="20210519213814700" title="$:/config/Manager/Show">
-<pre>tiddlers</pre>
-</div>
-<div created="20210519212140480" modified="20210519213631275" title="$:/config/Manager/System">
+<div created="20210519214042990" modified="20210519214042990" title="$:/config/Manager/System">
 <pre></pre>
 </div>
-<div created="20210519212121012" modified="20210519212122301" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home">
+<div created="20210519214157624" modified="20210519214157624" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home">
 <pre>show</pre>
 </div>
-<div created="20210519212133655" modified="20210519212249279" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/manager">
-<pre>hide</pre>
-</div>
-<div created="20210519212228251" modified="20210519212228251" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/more-page-actions">
+<div created="20210519213316555" modified="20210519213316555" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/more-page-actions">
 <pre>show</pre>
-</div>
-<div created="20210519212216030" modified="20210519212223292" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/tag-manager">
-<pre>hide</pre>
 </div>
 <div created="20210224125410789" modified="20210224125412453" title="$:/config/TiddlerInfo/Mode">
 <pre>popup</pre>
-</div>
-<div created="20210519212432685" modified="20210519212433209" title="$:/config/Toolbar/Icons">
-<pre>yes</pre>
-</div>
-<div created="20210519212430695" modified="20210519212431645" title="$:/config/Toolbar/Text">
-<pre>no</pre>
-</div>
-<div created="20210519212107365" modified="20210519212108123" title="$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/info">
-<pre>hide</pre>
 </div>
 <div created="20210224125549878" modified="20210224125553964" title="$:/config/Whitespace/sidebar">
 <pre>left</pre>
@@ -10191,13 +10149,13 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div caption="{{$:/language/SideBar/More/Caption}}" created="20210519213836936" modified="20210519213836936" tags="$:/tags/SideBar" title="$:/core/ui/SideBar/More">
+<div caption="{{$:/language/SideBar/More/Caption}}" created="20210519214136814" modified="20210519214136814" tags="$:/tags/SideBar" title="$:/core/ui/SideBar/More">
 <pre>&lt;div class=&quot;tc-more-sidebar&quot;&gt;
 &lt;$macrocall $name=&quot;tabs&quot; tabsList=&quot;[all[shadows+tiddlers]tag[$:/tags/MoreSideBar]!has[draft.of]]&quot; default={{$:/config/DefaultMoreSidebarTab}} state=&quot;$:/state/tab/moresidebar&quot; class=&quot;tc-vertical tc-sidebar-tabs-more&quot; explicitState=&quot;$:/state/tab/moresidebar-1850697562&quot;/&gt;
 &lt;/div&gt;
 </pre>
 </div>
-<div caption="{{$:/language/SideBar/Open/Caption}}" created="20210519213915215" modified="20210519213915215" tags="$:/tags/SideBar" title="$:/core/ui/SideBar/Open">
+<div caption="{{$:/language/SideBar/Open/Caption}}" created="20210519214127893" modified="20210519214127893" tags="$:/tags/SideBar" title="$:/core/ui/SideBar/Open">
 <pre>\whitespace trim
 \define lingo-base() $:/language/CloseAll/
 
@@ -10292,7 +10250,7 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
-<div created="20210224113552393" modified="20210519212034779" title="$:/palette">
+<div created="20210224113552393" modified="20210224113613021" title="$:/palette">
 <pre>$:/palettes/Twilight</pre>
 </div>
 <div author="Riz" core-version="&gt;=5.1.13" created="20161122145844768" creator="Riz
@@ -10670,13 +10628,13 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <div created="20210221174822961" modified="20210221174825974" title="$:/state/showeditpreview">
 <pre>no</pre>
 </div>
-<div created="20210224125707907" modified="20210519213505788" title="$:/state/sidebar">
+<div created="20210224125707907" modified="20210224125709859" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
-<div created="20210224113538303" modified="20210519213441727" title="$:/state/tab--1963855381">
-<pre>$:/core/ui/ControlPanel/Theme</pre>
+<div created="20210224113538303" modified="20210519213310052" title="$:/state/tab--1963855381">
+<pre>$:/core/ui/ControlPanel/Toolbars</pre>
 </div>
-<div created="20210224125327374" modified="20210519211753682" title="$:/state/tab--2112689675">
+<div created="20210224125327374" modified="20210224125624669" title="$:/state/tab--2112689675">
 <pre>$:/core/ui/ControlPanel/Basics</pre>
 </div>
 <div created="20210224125331487" modified="20210224125341847" title="$:/state/tab--959111941">
@@ -10685,28 +10643,28 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <div created="20210224113654694" modified="20210224113704838" title="$:/state/tab-1163638994">
 <pre>$:/core/ui/MoreSideBar/Plugins/Theme</pre>
 </div>
-<div created="20210224113330982" modified="20210519213522073" title="$:/state/tab-1749438307">
+<div created="20210224113330982" modified="20210519214224903" title="$:/state/tab-1749438307">
 <pre>$:/core/ui/ControlPanel/Settings</pre>
 </div>
-<div created="20210224113810148" modified="20210519213418772" title="$:/state/tab-2065006209">
+<div created="20210224113810148" modified="20210224113810148" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
 </div>
-<div created="20210224113652390" modified="20210519213843569" title="$:/state/tab/moresidebar-1850697562">
+<div created="20210224113652390" modified="20210519214139306" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Recent</pre>
 </div>
 <div created="20210221160244788" modified="20210221160244788" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div created="20210224125503950" modified="20210519213425346" title="$:/state/tabs/controlpanel/toolbars-1345989671">
+<div created="20210224125503950" modified="20210519214153788" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/PageControls</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210519213407450" list="[[Main Menu]]" modified="20210519213907301" title="$:/StoryList">
+<div created="20210519214025686" list="[[Main Menu]]" modified="20210519214219001" title="$:/StoryList">
 <pre></pre>
 </div>
-<div created="20210224113526881" modified="20210519213515270" title="$:/theme">
+<div created="20210224113526881" modified="20210224113530383" title="$:/theme">
 <pre>$:/themes/jd/Whitespace</pre>
 </div>
 <div author="JD" core-version="&gt;=5.1.14" created="20180326154440385" creator="jd" dependents="$:/themes/tiddlywiki/vanilla" description="Not-quite-there-yet quantum paper for TW5" list="contents readme" modified="20180727131047369" modifier="jd" name="Material" plugin-type="theme" title="$:/themes/jd/Material" type="application/json" version="0.4.14">
@@ -10827,33 +10785,6 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
             &quot;extra&quot;: &quot;hammerwidgets&quot;
         }
     }
-}</pre>
-</div>
-<div created="20180327133017293" creator="jd" modified="20210519213505787" modifier="jd" tags="" title="$:/themes/jd/Material/ConfigDB" type="application/json">
-<pre>{
-    &quot;fabmargin&quot;: &quot;5px&quot;,
-    &quot;fabsize&quot;: &quot;56px&quot;,
-    &quot;fabxy&quot;: &quot;30px&quot;,
-    &quot;fab&quot;: &quot;$:/core/ui/Buttons/new-tiddler&quot;,
-    &quot;fab1&quot;: &quot;$:/core/ui/Buttons/control-panel&quot;,
-    &quot;fab2&quot;: &quot;$:/core/ui/Buttons/save-wiki&quot;,
-    &quot;fab3&quot;: &quot;&quot;,
-    &quot;fab4&quot;: &quot;&quot;,
-    &quot;fab5&quot;: &quot;&quot;,
-    &quot;fab6&quot;: &quot;&quot;,
-    &quot;headerbtns&quot;: &quot;4&quot;,
-    &quot;icon&quot;: &quot;{{$:/core/images/menu-button}}&quot;,
-    &quot;statelists&quot;: &quot;yes&quot;,
-    &quot;mobilepopups&quot;: &quot;yes&quot;,
-    &quot;outlinenone&quot;: &quot;no&quot;,
-    &quot;fabiconsize&quot;: &quot;26px&quot;,
-    &quot;listsdefon&quot;: &quot;yes&quot;,
-    &quot;color-primary&quot;: &quot;#01579B&quot;,
-    &quot;color-sidebar-tab-background&quot;: &quot;#0288D1&quot;,
-    &quot;color-button-background&quot;: &quot;#cfd8dc&quot;,
-    &quot;color-tag-background&quot;: &quot;#cfd8dc&quot;,
-    &quot;styledframes&quot;: &quot;yes&quot;,
-    &quot;tiddler-width&quot;: &quot;100%&quot;
 }</pre>
 </div>
 <div author="jd" core-version="&gt;=5.1.17" dependents="$:/themes/tiddlywiki/vanilla" description="Lots of unused, negative space; an experiment on TW5 design" list="readme config" name="Whitespace" plugin-type="theme" title="$:/themes/jd/Whitespace" type="application/json" version="0.0.23">
