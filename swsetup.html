@@ -145,7 +145,17 @@ Error message and password prompt
 
 <li>$:/config/DefaultSidebarTab</li>
 
+<li>$:/config/Manager/Filter</li>
+
+<li>$:/config/Manager/System</li>
+
+<li>$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home</li>
+
+<li>$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/more-page-actions</li>
+
 <li>$:/config/TextEditor/EditorHeight/Mode</li>
+
+<li>$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/more-tiddler-actions</li>
 
 <li>$:/config/Whitespace/search</li>
 
@@ -154,8 +164,6 @@ Error message and password prompt
 <li>$:/config/Whitespace/Spacious</li>
 
 <li>$:/core</li>
-
-<li>$:/core/ui/SideBar/More</li>
 
 <li>$:/core/ui/SideBar/Tools</li>
 
@@ -183,17 +191,27 @@ Error message and password prompt
 
 <li>$:/SiteTitle</li>
 
+<li>$:/state/advancedsearch/currentTab</li>
+
+<li>$:/state/plugin-info-334910430-$:/core---1812962263</li>
+
 <li>$:/state/showeditpreview</li>
 
 <li>$:/state/sidebar</li>
+
+<li>$:/state/tab--1498284803</li>
 
 <li>$:/state/tab--1963855381</li>
 
 <li>$:/state/tab--2112689675</li>
 
+<li>$:/state/tab--959111941</li>
+
 <li>$:/state/tab-1749438307</li>
 
 <li>$:/state/tab-2065006209</li>
+
+<li>$:/state/tabs/controlpanel/toolbars-1345989671</li>
 
 <li>$:/status/RequireReloadDueToPluginChange</li>
 
@@ -250,13 +268,28 @@ Error message and password prompt
 <div created="20200227150231951" modified="20200227150231951" title="$:/config/AnimationDuration">
 <pre>200</pre>
 </div>
-<div created="20210224153722026" modified="20210714231200414" title="$:/config/DefaultSidebarTab">
-<pre>$:/core/ui/SideBar/More</pre>
+<div created="20210224153722026" modified="20210714231647696" title="$:/config/DefaultSidebarTab">
+<pre>$:/core/ui/SideBar/Open</pre>
+</div>
+<div created="20210714231546341" modified="20210714231547433" title="$:/config/Manager/Filter">
+<pre>side</pre>
+</div>
+<div created="20210714231543641" modified="20210714231543641" title="$:/config/Manager/System">
+<pre></pre>
+</div>
+<div created="20210714231428225" modified="20210714231428998" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home">
+<pre>hide</pre>
+</div>
+<div created="20210714230742202" modified="20210714231435262" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/more-page-actions">
+<pre>show</pre>
 </div>
 <div created="20200227143210697" modified="20200227143210697" title="$:/config/TextEditor/EditorHeight/Mode">
 <pre>fixed</pre>
 </div>
-<div created="20210714231135644" modified="20210714231135644" title="$:/config/Whitespace/search">
+<div created="20210714230800459" modified="20210714230801004" title="$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/more-tiddler-actions">
+<pre>show</pre>
+</div>
+<div created="20210714230956247" modified="20210714231221267" title="$:/config/Whitespace/search">
 <pre>no</pre>
 </div>
 <div created="20210224153212981" modified="20210224153212981" title="$:/config/Whitespace/sidebar">
@@ -10129,12 +10162,6 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div caption="{{$:/language/SideBar/More/Caption}}" modified="20210119175513347" title="$:/core/ui/SideBar/More">
-<pre>&lt;div class=&quot;tc-more-sidebar&quot;&gt;
-&lt;$macrocall $name=&quot;tabs&quot; tabsList=&quot;[all[shadows+tiddlers]tag[$:/tags/MoreSideBar]!has[draft.of]]&quot; default={{$:/config/DefaultMoreSidebarTab}} state=&quot;$:/state/tab/moresidebar&quot; class=&quot;tc-vertical tc-sidebar-tabs-more&quot; explicitState=&quot;$:/state/tab/moresidebar-1850697562&quot;/&gt;
-&lt;/div&gt;
-</pre>
-</div>
 <div caption="{{$:/language/SideBar/Tools/Caption}}" modified="20210119175512747" title="$:/core/ui/SideBar/Tools">
 <pre>\define lingo-base() $:/language/ControlPanel/
 \define config-title()
@@ -10566,28 +10593,43 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <div created="20190805132921383" modified="20200227150211110" title="$:/SiteTitle">
 <pre>Software Setup Information</pre>
 </div>
+<div created="20210714231446738" modified="20210714231448123" title="$:/state/advancedsearch/currentTab">
+<pre>$:/core/ui/AdvancedSearch/System</pre>
+</div>
+<div created="20210714231505916" modified="20210714231505916" title="$:/state/plugin-info-334910430-$:/core---1812962263">
+<pre>contents</pre>
+</div>
 <div created="20210310181127576" modified="20210310181133716" title="$:/state/showeditpreview">
 <pre>no</pre>
 </div>
-<div created="20210119175514835" modified="20210224154821360" title="$:/state/sidebar">
+<div created="20210119175514835" modified="20210714230717404" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
-<div created="20210119175524146" modified="20210224154100744" title="$:/state/tab--1963855381">
-<pre>$:/themes/jd/Whitespace/config</pre>
+<div created="20210714231446740" modified="20210714231448123" title="$:/state/tab--1498284803">
+<pre>$:/core/ui/AdvancedSearch/System</pre>
 </div>
-<div created="20210224153335984" modified="20210224153338154" title="$:/state/tab--2112689675">
+<div created="20210119175524146" modified="20210714230844977" title="$:/state/tab--1963855381">
+<pre>$:/core/ui/ControlPanel/Toolbars</pre>
+</div>
+<div created="20210224153335984" modified="20210714230703774" title="$:/state/tab--2112689675">
 <pre>$:/core/ui/ControlPanel/Basics</pre>
 </div>
-<div created="20210119175521306" modified="20210310154317332" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Info</pre>
+<div created="20210714230657141" modified="20210714230703133" title="$:/state/tab--959111941">
+<pre>$:/core/ui/ControlPanel/EditorTypes</pre>
+</div>
+<div created="20210119175521306" modified="20210714230856046" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Settings</pre>
 </div>
 <div created="20210224154106180" modified="20210224154106180" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
 </div>
+<div created="20210714230729263" modified="20210714230752926" title="$:/state/tabs/controlpanel/toolbars-1345989671">
+<pre>$:/core/ui/ControlPanel/Toolbars/ViewToolbar</pre>
+</div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210714231135650" list="$:/AdvancedSearch $:/config/DefaultSidebarTab [[Main Menu]]" modified="20210714231142958" title="$:/StoryList">
+<div created="20210714231221271" list="$:/ControlPanel" modified="20210714231636592" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210119175512184" list="$:/core/ui/SideBar/Open $:/core/ui/SideBar/Recent $:/core/ui/SideBar/Tools $:/core/ui/SideBar/More" modified="20210119175512184" title="$:/tags/SideBar">
