@@ -207,8 +207,6 @@ Error message and password prompt
 
 <li>$:/themes/tiddlywiki/vanilla/metrics/tiddlerwidth</li>
 
-<li>Ansible Tower LDAP</li>
-
 <li>Jenkins Docker setup</li>
 
 <li>LDAP Search With Active Directory</li>
@@ -10562,7 +10560,7 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210718180905615" list="$:/ControlPanel [[Main Menu]] [[LDAP Search With Active Directory]] [[Set Default Graphical Shell]]" modified="20210718181916250" title="$:/StoryList">
+<div created="20210718180905615" list="[[Main Menu]]" modified="20210718182458368" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180826061648522" creator="jd" modified="20180826061648522" modifier="jd" title="$:/theme">
@@ -10927,104 +10925,6 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 </div>
 <div created="20210119175305464" modified="20210119175305464" title="$:/themes/tiddlywiki/vanilla/metrics/tiddlerwidth">
 <pre></pre>
-</div>
-<div created="20200219155300867" modified="20200219163152281" title="Ansible Tower LDAP">
-<pre>Add the cert for the LDAP server to /etc/openldap/certs.
-
-If the LDAP server has a self signed cert add `TLS_REQCERT allow` to /etc/openldap/ldap.conf.
-
-!! Low Trust
-
-Authentication type LDAP
-
-|!Name|!Setting|!Note|
-|LDAP Server URI|`ldaps://lt-win-ad.viprcenter.com:636`||
-|LDAP Bind DN|cn=ldapauth,cn=Users,dc=viprcenter,dc=com||
-|LDAP Bind Password||Show doesn't reveal password|
-|LDAP User DN Template|blank|Overrides LDAP user search field when used|
-|LDAP Group Type|ActiveDirectoryGroupType|Remove member_attr from LDAP Group Type Parameters to avoid save error|
-|LDAP Require Group|blank||
-|LDAP Deny Group|blank||
-
-The next sections are apparently fed directly to django-ldap-auth.
-
-!!! LDAP User Search
-
-```
-[
-    &quot;DC=viprcenter,DC=com&quot;,
-    &quot;SCOPE_SUBTREE&quot;,
-    &quot;(sAMAccountName=%(user)s&quot;
-}
-```
-
-!!! LDAP Group Search
-
-```
-[
-    &quot;DC=viprcenter,DC=com&quot;,
-    &quot;SCOPE_SUBTREE&quot;,
-    &quot;(objectClass=group)&quot;
-}
-```
-
-!!! LDAP User Attribute Map
-
-There don't appear to be any other keywords because it complains if you add one.
-
-```
-{
-    &quot;first_name&quot;: &quot;givenName&quot;,
-    &quot;last_name&quot;: &quot;sn&quot;,
-    &quot;email&quot;: &quot;mail
-}
-```
-
-!!! LDAP Group Type Parameters
-
-I don't know what this is for. Authentication works with it blank.
-
-Remove `member_attr` if using LDAP Group Type=ActiveDirectoryGroupType.
-
-```
-{
-    &quot;name_attr&quot;: &quot;cn&quot;
-}
-```
-
-!!! LDAP User Flags by Group
-
-There appears to only be two types of users.
-
-```
-{
-    &quot;is_superuser&quot;: [
-         &quot;CN=Ansible Tower Admins,CN=Users,DC=viprcenter,DC=com&quot;
-    ],
-    &quot;is_system_auditor&quot;: []
-}
-```
-
-!!! LDAP Organization Map
-
-```
-{
-    &quot;VIPR Center&quot;: {
-        &quot;admins&quot;: &quot;CN=Ansible Tower Admins,CN=Users,DC=viprcenter,DC=com&quot;,
-        &quot;remove_admins&quot;: true,
-        &quot;users&quot;: false,
-        &quot;remove_users&quot;: true
-    }
-}
-```
-
-!!! LDAP Team Map
-
-Not using this currently.
-
-```
-{}
-```</pre>
 </div>
 <div created="20201013122028356" modified="20201013122134629" title="Jenkins Docker setup">
 <pre># Agent setup
