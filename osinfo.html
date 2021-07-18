@@ -141,6 +141,10 @@ Error message and password prompt
 
 <p>This <a class="tc-tiddlylink-external" href="https://tiddlywiki.com" rel="noopener noreferrer" target="_blank">TiddlyWiki</a> contains the following tiddlers:</p><p><ul>
 
+<li>$:/config/DefaultSidebarTab</li>
+
+<li>$:/config/Whitespace/search</li>
+
 <li>$:/config/Whitespace/sidebar</li>
 
 <li>$:/config/Whitespace/SidebarHeight</li>
@@ -149,11 +153,19 @@ Error message and password prompt
 
 <li>$:/core</li>
 
-<li>$:/core/ui/SideBar/More</li>
-
 <li>$:/core/ui/SideBar/Tools</li>
 
 <li>$:/DefaultTiddlers</li>
+
+<li>$:/GitHub/Branch</li>
+
+<li>$:/GitHub/Filename</li>
+
+<li>$:/GitHub/Path</li>
+
+<li>$:/GitHub/Repo</li>
+
+<li>$:/GitHub/Username</li>
 
 <li>$:/Import</li>
 
@@ -172,6 +184,8 @@ Error message and password prompt
 <li>$:/state/tab--1963855381</li>
 
 <li>$:/state/tab-1749438307</li>
+
+<li>$:/state/tab-2065006209</li>
 
 <li>$:/status/RequireReloadDueToPluginChange</li>
 
@@ -223,6 +237,12 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
+<div created="20210718181145764" modified="20210718181145764" title="$:/config/DefaultSidebarTab">
+<pre>$:/core/ui/SideBar/More</pre>
+</div>
+<div created="20210718181014870" modified="20210718181015827" title="$:/config/Whitespace/search">
+<pre>no</pre>
+</div>
 <div created="20210119175314716" modified="20210119175314716" title="$:/config/Whitespace/sidebar">
 <pre>left</pre>
 </div>
@@ -10096,12 +10116,6 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div caption="{{$:/language/SideBar/More/Caption}}" modified="20210119175254739" title="$:/core/ui/SideBar/More">
-<pre>&lt;div class=&quot;tc-more-sidebar&quot;&gt;
-&lt;$macrocall $name=&quot;tabs&quot; tabsList=&quot;[all[shadows+tiddlers]tag[$:/tags/MoreSideBar]!has[draft.of]]&quot; default={{$:/config/DefaultMoreSidebarTab}} state=&quot;$:/state/tab/moresidebar&quot; class=&quot;tc-vertical tc-sidebar-tabs-more&quot; explicitState=&quot;$:/state/tab/moresidebar-1850697562&quot;/&gt;
-&lt;/div&gt;
-</pre>
-</div>
 <div caption="{{$:/language/SideBar/Tools/Caption}}" modified="20210119175252356" title="$:/core/ui/SideBar/Tools">
 <pre>\define lingo-base() $:/language/ControlPanel/
 \define config-title()
@@ -10136,6 +10150,21 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <div created="20190805133007798" modified="20190805134203569" title="$:/DefaultTiddlers">
 <pre>[[Main Menu]]
 </pre>
+</div>
+<div created="20210718181404205" modified="20210718181404581" title="$:/GitHub/Branch">
+<pre>main</pre>
+</div>
+<div created="20210718180952757" modified="20210718180954439" title="$:/GitHub/Filename">
+<pre>osinfo.html</pre>
+</div>
+<div created="20210718180949797" modified="20210718182045288" title="$:/GitHub/Path">
+<pre></pre>
+</div>
+<div created="20210718180937680" modified="20210718182051309" title="$:/GitHub/Repo">
+<pre>einwolf/tiddlywiki</pre>
+</div>
+<div created="20210718180931048" modified="20210718180931905" title="$:/GitHub/Username">
+<pre>einwolf</pre>
 </div>
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
@@ -10524,13 +10553,16 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <div created="20210119175259411" modified="20210119175317331" title="$:/state/tab--1963855381">
 <pre>$:/core/ui/ControlPanel/Palette</pre>
 </div>
-<div created="20210119175256499" modified="20210119175256499" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Appearance</pre>
+<div created="20210119175256499" modified="20210718181351244" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Saving</pre>
+</div>
+<div created="20210718180928035" modified="20210718180928035" title="$:/state/tab-2065006209">
+<pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210119175244717" list="$:/ControlPanel $:/Import [[Main Menu]]" modified="20210119175244717" title="$:/StoryList">
+<div created="20210718180905615" list="$:/ControlPanel [[Main Menu]] [[LDAP Search With Active Directory]] [[Set Default Graphical Shell]]" modified="20210718181916250" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180826061648522" creator="jd" modified="20180826061648522" modifier="jd" title="$:/theme">
@@ -11004,14 +11036,17 @@ The Jenkins agent runs as user jenkins.
 Put the proxy config in `/home/jenkins/.docker/config.json`
 </pre>
 </div>
-<div created="20190812163251470" modified="20200219195619702" title="LDAP Search With Active Directory">
+<div created="20190812163251470" modified="20210718181831715" title="LDAP Search With Active Directory">
 <pre>!! Windows
 
 ```
-dsquery user dc=example,dc=com -name username-here*
+# * is wildcard
+dsquery user dc=example,dc=com -name &lt;username&gt;*
 ```
 
 !! Using with Active Directory
+
+It requires authentication all the time. It uses a search user (ldapauth here) to authenticate and search ldap with. This user should have ldap read only permissions.
 
 ```
 -x  Use basic auth instead of SASL auth
@@ -11019,7 +11054,7 @@ dsquery user dc=example,dc=com -name username-here*
 -H Host in URL format
 -w Specify password
 -W Prompt for password
--D binddn
+-D bind distinguished name
 -b search base
 -s  Search scope base, sub, one, or children. sub is default.
 ```
@@ -11027,12 +11062,14 @@ dsquery user dc=example,dc=com -name username-here*
 Active directory will take UserPrincipalName `&lt;sAMAccountName&gt;@&lt;domain FQDN&gt;` format or NetBIOS format `&lt;Domain NetBIOS Name&gt;\&lt;sAMAccountName&gt;`
 
 ```
-ldapsearch -H ldaps://lt-win-ad.viprcenter.com -x -W -D &quot;ldapauth@viprcenter.com&quot; -b &quot;dc=viprcenter,dc=com&quot; -s sub &quot;(objectclass=*)&quot;
-ldapsearch -H ldaps://lt-win-ad.viprcenter.com -x -W -D &quot;ldapauth@viprcenter.com&quot; -b &quot;dc=viprcenter,dc=com&quot; &quot;(sAMAccountName=wymanco)&quot;
+# Active directory will take user format user@domain.com
+ldapsearch -H ldaps://win-ad.example.com -x -W -D &quot;ldapauth@example.com&quot; -b &quot;dc=example,dc=com&quot; -s sub &quot;(objexampleectclass=*)&quot;
+ldapsearch -H ldaps://win-ad.example.com -x -W -D &quot;ldapauth@example.com&quot; -b &quot;dc=example,dc=com&quot; &quot;(sAMAccountName=&lt;username&gt;)&quot;
 ```
 
 ```
-ldapsearch -x -H ldaps://lt-win-ad.viprcenter.com -D &quot;cn=ldapauth,cn=Users,dc=viprcenter,dc=com&quot; -W -b &quot;dc=viprcenter,dc=com&quot; -s sub &quot;(cn=*)&quot; cn mail s
+# LDAP user format
+ldapsearch -x -H ldaps://lt-win-ad.example.com -D &quot;cn=ldapauth,cn=Users,dc=example,dc=com&quot; -W -b &quot;dc=,dc=com&quot; -s sub &quot;(cn=*)&quot; cn mail s
 ```
 </pre>
 </div>
@@ -11106,12 +11143,14 @@ openssl x509 -inform der -in patchrepo.viprcenter.com.cer -out patchrepo.viprcen
 ```
 </pre>
 </div>
-<div created="20200722110708998" modified="20200722111742928" title="Set Default Graphical Shell">
+<div created="20200722110708998" modified="20210718181338258" title="Set Default Graphical Shell">
 <pre>! Set user's default graphical shell
+
+This is useful for xrdp where it doesn't run gdm to use its shell selection popup menu.
 
 Make a file at `/var/lib/AccountService/users/` with the user name. Copy the contents of one of the desktop files below.
 
-Example: `/var/lib/AccountService/users/wymanco@viprcenter.com`
+Example: `/var/lib/AccountService/users/&lt;username&gt;`
 
 ! RHEL docs reference
 
