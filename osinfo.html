@@ -185,6 +185,8 @@ Error message and password prompt
 
 <li>$:/state/edit/references-1080569105</li>
 
+<li>$:/state/showeditpreview</li>
+
 <li>$:/state/tab--1963855381</li>
 
 <li>$:/state/tab-1749438307</li>
@@ -220,6 +222,8 @@ Error message and password prompt
 <li>Move podman Storage</li>
 
 <li>Renew Web Site Certificate</li>
+
+<li>RHEL7 libvirt</li>
 
 <li>RHEL7 Set Default Graphical Shell</li>
 
@@ -10558,6 +10562,9 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <div created="20210718183948495" modified="20210718183952687" title="$:/state/edit/references-1080569105">
 <pre>hide</pre>
 </div>
+<div created="20210718184422903" modified="20210718184426333" title="$:/state/showeditpreview">
+<pre>no</pre>
+</div>
 <div created="20210119175259411" modified="20210119175317331" title="$:/state/tab--1963855381">
 <pre>$:/core/ui/ControlPanel/Palette</pre>
 </div>
@@ -10570,7 +10577,7 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210718180905615" list="[[Main Menu]] [[RHEL 7 libvirt]] [[RHEL7 Set Default Graphical Shell]]" modified="20210718184016881" title="$:/StoryList">
+<div created="20210718180905615" list="[[Main Menu]] [[RHEL7 libvirt]]" modified="20210718184016881" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180826061648522" creator="jd" modified="20180826061648522" modifier="jd" title="$:/theme">
@@ -11051,6 +11058,23 @@ Creates the certificate patchrepo.viprcenter.com.cer in DER binary format. Conve
 
 ```
 openssl x509 -inform der -in patchrepo.viprcenter.com.cer -out patchrepo.viprcenter.com.pem
+```
+</pre>
+</div>
+<div created="20210718184132090" modified="20210718184550943" title="RHEL7 libvirt">
+<pre>
+! Firewalld
+
+RHEL 7 doesn't have the libvirt firewalld zone. This causes firewalld to block traffic on libvirt networks like vibr0. No zone is assigned to vibr0 by default.
+
+```
+# firewalld loses the association when restarted
+firewall-cmd --zone internal --add-interface vibr0
+
+# libvirt doesn't support &lt;bridge zone='trusted'&gt; in net xml
+
+# Using network ips works
+firewall-cmd --zone=trusted --add-source=&quot;192.168.122.0/24&quot;
 ```
 </pre>
 </div>
