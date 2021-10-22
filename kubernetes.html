@@ -10635,8 +10635,8 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <div created="20190805132921383" modified="20210119180520400" title="$:/SiteTitle">
 <pre>Kubernetes</pre>
 </div>
-<div created="20210119183632914" modified="20210718185951704" title="$:/state/showeditpreview">
-<pre>no</pre>
+<div created="20210119183632914" modified="20211022120103961" title="$:/state/showeditpreview">
+<pre>yes</pre>
 </div>
 <div created="20210119174928740" modified="20210119175016987" title="$:/state/sidebar">
 <pre>yes</pre>
@@ -11549,7 +11549,7 @@ Community driven with different levels of support.
 <div created="20210119192112918" modified="20210119192137692" title="Red Hat yum Repos">
 <pre>Containers will sometimes `yum install` packages.</pre>
 </div>
-<div created="20211022120055003" modified="20211022120057374" title="RHEL7 Setup">
+<div created="20211022120055003" modified="20211022120211092" title="RHEL7 Setup">
 <pre>!! Setup RHEL7 libvirt for kubernetes
 
 This is mostly about networking setup.
@@ -11559,16 +11559,19 @@ This is mostly about networking setup.
 Ref https://wiki.libvirt.org/page/Net.bridge.bridge-nf-call_and_sysctl.conf
 
 /etc/modules-load.d/br-netfilter.conf
+
 ```
 br-netfilter
 ```
 
 /etc/sysctl.d/ip-network.conf
+
 ```
 net.ipv4.ip_forward=1
 ```
 
 /etc/sysctl.d/br-netfilter.conf
+
 ```
 net.bridge.bridge-nf-call-arptables=0
 net.bridge.bridge-nf-call-iptables=0
