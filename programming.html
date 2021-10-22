@@ -157,6 +157,16 @@ Error message and password prompt
 
 <li>$:/DefaultTiddlers</li>
 
+<li>$:/GitHub/Branch</li>
+
+<li>$:/GitHub/Filename</li>
+
+<li>$:/GitHub/Path</li>
+
+<li>$:/GitHub/Repo</li>
+
+<li>$:/GitHub/Username</li>
+
 <li>$:/Import</li>
 
 <li>$:/isEncrypted</li>
@@ -171,9 +181,13 @@ Error message and password prompt
 
 <li>$:/SiteTitle</li>
 
+<li>$:/state/showeditpreview</li>
+
 <li>$:/state/tab--1963855381</li>
 
 <li>$:/state/tab-1749438307</li>
+
+<li>$:/state/tab-2065006209</li>
 
 <li>$:/status/RequireReloadDueToPluginChange</li>
 
@@ -208,6 +222,8 @@ Error message and password prompt
 <li>Python Code Formatter Black</li>
 
 <li>Python Code Formatter Yapf</li>
+
+<li>Python Pip Timeout</li>
 
 <li>Python Virtual Environments</li>
 
@@ -10146,6 +10162,21 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <pre>[[Main Menu]]
 </pre>
 </div>
+<div created="20211022120614665" modified="20211022120614929" title="$:/GitHub/Branch">
+<pre>main</pre>
+</div>
+<div created="20211022120626952" modified="20211022120626952" title="$:/GitHub/Filename">
+<pre>programming.html</pre>
+</div>
+<div created="20211022120620539" modified="20211022120620539" title="$:/GitHub/Path">
+<pre>/</pre>
+</div>
+<div created="20211022120613118" modified="20211022120613118" title="$:/GitHub/Repo">
+<pre>einwolf/tiddlywiki</pre>
+</div>
+<div created="20211022120608216" modified="20211022120608216" title="$:/GitHub/Username">
+<pre>einwolf</pre>
+</div>
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
@@ -10530,16 +10561,22 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <div created="20190805132921383" modified="20190805174230205" title="$:/SiteTitle">
 <pre>Programming Information</pre>
 </div>
+<div created="20211022120355666" modified="20211022120355666" title="$:/state/showeditpreview">
+<pre>yes</pre>
+</div>
 <div created="20210119175358436" modified="20210119175409883" title="$:/state/tab--1963855381">
 <pre>$:/core/ui/ControlPanel/Palette</pre>
 </div>
-<div created="20210119175354699" modified="20210119175354699" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Appearance</pre>
+<div created="20210119175354699" modified="20211022120554230" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Saving</pre>
+</div>
+<div created="20211022120555677" modified="20211022120556636" title="$:/state/tab-2065006209">
+<pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210119175348491" list="$:/ControlPanel [[Main Menu]]" modified="20210119175348491" title="$:/StoryList">
+<div created="20211022120357996" list="$:/ControlPanel [[Main Menu]] [[Python Pip Timeout]]" modified="20211022120546422" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180826061648522" creator="jd" modified="20180826061648522" modifier="jd" title="$:/theme">
@@ -11018,7 +11055,7 @@ channels:
   - file:///u/wymanco/anaconda3/pkgs
 ```</pre>
 </div>
-<div created="20190805132952926" modified="20191120125121507" tags="" title="Main Menu">
+<div created="20190805132952926" modified="20211022120402979" tags="" title="Main Menu">
 <pre>Visual Studio Code
 
 * [[Visual Studio Code Formatting C]]
@@ -11028,9 +11065,10 @@ C
 
 * [[clang-format]]
 
-! Python
+!! Python
 
-[[Python Virtual Environments]]
+*[[Python Virtual Environments]]
+*[[Python Pip Timeout]]
 
 !! Anaconda
 * [[condarc]]
@@ -11056,6 +11094,24 @@ https://black.now.sh/</pre>
 <pre>https://github.com/google/yapf
 
 https://yapf.now.sh/</pre>
+</div>
+<div created="20211022120409340" modified="20211022120517942" title="Python Pip Timeout">
+<pre>!! Pip TImeout
+
+`pip` has a default network timeout of 15 seconds.
+
+```
+export PIP_DEFAULT_TIMEOUT=100
+
+# Not documented?
+pip install --default-timeout=100 pytorch
+```
+
+Ref
+
+https://stackoverflow.com/questions/43298872/how-to-solve-readtimeouterror-httpsconnectionpoolhost-pypi-python-org-port
+
+https://pip.pypa.io/en/stable/cli/pip/</pre>
 </div>
 <div created="20191120123551859" modified="20191120123700836" title="Python Virtual Environments">
 <pre>The python virtual environment installs packages from the network.
