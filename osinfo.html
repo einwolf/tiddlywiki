@@ -10577,7 +10577,7 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20211022121216252" list="[[Main Menu]] [[Splitting Archives for File Transfer]]" modified="20211022121216252" title="$:/StoryList">
+<div created="20211022121216252" list="[[Main Menu]] [[RHEL7 Set Default Graphical Shell]] [[Splitting Archives for File Transfer]]" modified="20211022121434756" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180826061648522" creator="jd" modified="20180826061648522" modifier="jd" title="$:/theme">
@@ -11077,7 +11077,7 @@ firewall-cmd --zone=trusted --add-source=&quot;192.168.122.0/24&quot;
 ```
 </pre>
 </div>
-<div created="20200722110708998" modified="20210802223917811" title="RHEL7 Set Default Graphical Shell">
+<div created="20200722110708998" modified="20211022122122142" title="RHEL7 Set Default Graphical Shell">
 <pre>!! Current Version
 
 RHEL 7.9 with xrdp 0.9.16 from epel7 works with ~.Xsession. Xrdp works better than it used to.
@@ -11088,6 +11088,8 @@ Example .Xsession
 #!/bin/bash
 exec gnome-session
 ```
+
+.Xclients is used also. Not sure if it's a version change thing. Tested in 0.9.17.
 
 !! Set user's default graphical shell through settings default
 
