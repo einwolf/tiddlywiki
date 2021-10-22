@@ -10577,7 +10577,7 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210802222941194" list="[[Main Menu]] [[RHEL7 Set Default Graphical Shell]]" modified="20210802223853044" title="$:/StoryList">
+<div created="20211022115551189" list="$:/ControlPanel [[Main Menu]] [[Splitting Archives for File Transfer]]" modified="20211022115600722" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180826061648522" creator="jd" modified="20180826061648522" modifier="jd" title="$:/theme">
@@ -11123,7 +11123,7 @@ SystemAccount=false
 ```
 </pre>
 </div>
-<div created="20200522134211389" modified="20200722113019526" title="Splitting Archives for File Transfer">
+<div created="20200522134211389" modified="20211022115707045" title="Splitting Archives for File Transfer">
 <pre>Command reference for splitting a file into smaller pieces using an archiver.
 
 ~WinZip will extract a zip file created by Linux zip splitting.
@@ -11138,6 +11138,8 @@ There is no verification so checksum all the pieces.
 !! tar
 
 Does not split archive. See split and cat.
+
+`tar cvzf - files | split -b1G - archive.tar.gz.`
 
 !! zip
 
