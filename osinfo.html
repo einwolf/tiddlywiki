@@ -10577,7 +10577,7 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20211022115551189" list="$:/ControlPanel [[Main Menu]] [[Splitting Archives for File Transfer]]" modified="20211022115600722" title="$:/StoryList">
+<div created="20211022121216252" list="[[Main Menu]] [[Splitting Archives for File Transfer]]" modified="20211022121216252" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180826061648522" creator="jd" modified="20180826061648522" modifier="jd" title="$:/theme">
@@ -11123,7 +11123,7 @@ SystemAccount=false
 ```
 </pre>
 </div>
-<div created="20200522134211389" modified="20211022115707045" title="Splitting Archives for File Transfer">
+<div created="20200522134211389" modified="20211022121242239" title="Splitting Archives for File Transfer">
 <pre>Command reference for splitting a file into smaller pieces using an archiver.
 
 ~WinZip will extract a zip file created by Linux zip splitting.
@@ -11155,7 +11155,7 @@ unzip -d archive.zip
 
 !! 7zip
 
-`p7z a -v1G archive.7z files*`
+`p7z a -m0=Copy -v1G archive.7z files*`
 
 `p7z x archive.7z`
 
