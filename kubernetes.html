@@ -271,6 +271,8 @@ Error message and password prompt
 
 <li>Red Hat yum Repos</li>
 
+<li>RHEL7 Setup</li>
+
 </ul>
 </p>
 
@@ -10660,7 +10662,7 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="[[Main Menu]]" title="$:/StoryList">
+<div created="20211022120047492" list="[[Main Menu]] [[RHEL7 Setup]]" modified="20211022120047492" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180329154930300" creator="jd" modified="20210119180224274" modifier="jd" title="$:/theme">
@@ -11546,6 +11548,76 @@ Community driven with different levels of support.
 </div>
 <div created="20210119192112918" modified="20210119192137692" title="Red Hat yum Repos">
 <pre>Containers will sometimes `yum install` packages.</pre>
+</div>
+<div created="20211022120055003" modified="20211022120057374" title="RHEL7 Setup">
+<pre>!! Setup RHEL7 libvirt for kubernetes
+
+This is mostly about networking setup.
+* br-netfilter for firewalld/iptables to work on bridge interfaces
+* Enable sysctls for routing and forwarding traffic
+
+Ref https://wiki.libvirt.org/page/Net.bridge.bridge-nf-call_and_sysctl.conf
+
+/etc/modules-load.d/br-netfilter.conf
+```
+br-netfilter
+```
+
+/etc/sysctl.d/ip-network.conf
+```
+net.ipv4.ip_forward=1
+```
+
+/etc/sysctl.d/br-netfilter.conf
+```
+net.bridge.bridge-nf-call-arptables=0
+net.bridge.bridge-nf-call-iptables=0
+net.bridge.bridge-nf-call-ip6tables=0
+```
+
+```yaml
+# ansible-playbook -v -i 192.168.122.61, setup-libvirt.yaml -b -u cluster
+# ansible-playbook -v -i localhost, -e ansible_connection=local setup-libvirt.yaml -b -K
+---
+- hosts: all
+  gather_facts: False
+
+  tasks:
+  - name: Load br_netfilter module
+    modprobe:
+      name: br_netfilter
+      state: present
+    register: br_netfilter
+
+  - name: Add br_netfilter into /etc/modules-load.d/br-netfilter.conf
+    copy:
+      dest: /etc/modules-load.d/br-netfilter.conf
+      content: |
+        br-netfilter
+      owner: root
+      group: root
+      mode: 0644
+
+  - name: sysctl net.ipv4.ip_forward=1
+    sysctl:
+      name: net.ipv4.ip_forward
+      value: &quot;1&quot;
+      sysctl_file: /etc/sysctl.d/ip-network.conf
+      state: present
+      reload: yes
+
+  - name: sysctl bridge-nf-call-arptables/iptables/ip6tables=1
+    sysctl:
+      name: &quot;{{ item }}&quot;
+      state: present
+      value: &quot;0&quot;
+      sysctl_file: /etc/sysctl.d/bridge-nf-call.conf
+      reload: yes
+    with_items:
+      - net.bridge.bridge-nf-call-arptables
+      - net.bridge.bridge-nf-call-iptables
+      - net.bridge.bridge-nf-call-ip6tables
+```</pre>
 </div>
 
 
