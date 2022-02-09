@@ -10891,7 +10891,7 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <div created="20210119175442957" modified="20211022121301843" title="$:/state/tab-1749438307">
 <pre>$:/core/ui/ControlPanel/Saving</pre>
 </div>
-<div created="20210224154158300" modified="20210224154158300" title="$:/state/tab-2065006209">
+<div created="20210224154158300" modified="20220209133835723" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
 </div>
 <div created="20210519214403923" modified="20210519214403923" title="$:/state/tabs/controlpanel/toolbars-1345989671">
@@ -10900,7 +10900,7 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20211022121256531" list="$:/ControlPanel [[Main Menu]] [[Northrop Specific]]" modified="20211022121322298" title="$:/StoryList">
+<div created="20220209133831040" list="[[Main Menu]] [[Linux Docker]]" modified="20220209133841078" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20180826061648522" creator="jd" modified="20180826061648522" modifier="jd" title="$:/theme">
@@ -11266,7 +11266,7 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <div created="20210119175451640" modified="20210224153933356" title="$:/themes/tiddlywiki/vanilla/metrics/tiddlerwidth">
 <pre>100%</pre>
 </div>
-<div created="20201013120154691" modified="20201013123730670" title="Linux Docker">
+<div created="20201013120154691" modified="20220209135315916" title="Linux Docker">
 <pre>Reference https://docs.docker.com/network/proxy/
 
 ! No global config in daemon.json
@@ -11282,10 +11282,10 @@ This sets the proxy environment variables into containers. It does not allow the
 ```
 {
     &quot;proxies&quot;: {
-    &quot;default&quot;: {
-            &quot;httpProxy&quot;: &quot;http://contractorproxyeast.northgrum.com:80&quot;,
-            &quot;httpsProxy&quot;: &quot;http://contractorproxyeast.northgrum.com:80&quot;,
-            &quot;noProxy&quot;: &quot;*.test.example.com,.example2.com&quot;
+        &quot;default&quot;: {
+                &quot;httpProxy&quot;: &quot;http://proxy.com:80&quot;,
+                &quot;httpsProxy&quot;: &quot;http://proxy.com:80&quot;,
+                &quot;noProxy&quot;: &quot;127.0.0.0/8,localhost&quot;
         }
     }
 }
@@ -11306,10 +11306,14 @@ nano /etc/systemd/system/docker.service.d/http-proxy.conf
 
 ```
 [Service]
-Environment=&quot;HTTP_PROXY=http://contractorproxyeast.northgrum.com:80&quot;
-Environment=&quot;HTTPS_PROXY=http://contractorproxyeast.northgrum.com:80&quot;
-Environment=&quot;NO_PROXY=10.161.188.0/22&quot;
+Environment=&quot;HTTP_PROXY=http://proxy.com:80&quot;
+Environment=&quot;HTTPS_PROXY=http://proxy.com:80&quot;
+Environment=&quot;127.0.0.0/8,localhost&quot;
 ```
+
+!Fedora 35
+
+Docker through package moby-engine-20.10.12 is not passing through HTTP_PROXY and other environment variables. It needed config.json setup.
 </pre>
 </div>
 <div created="20190805142434246" modified="20200317142516766" title="Linux Environment Variables">
